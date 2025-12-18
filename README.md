@@ -109,9 +109,9 @@ git log --oneline --graph
 git log --oneline --graph
 * 0250d08 (HEAD -> master, origin/master) first commit
 ```
-11, 12, 13. 
+11, 12, 13.
 ```
-git log --oneline --graph
+vlad@LAPTOP-Q23R32CR:~/progLab9$ git log --oneline --graph
 * eca4d80 (HEAD -> master) switch to mybranch
 * 0250d08 (origin/master) first commit
 vlad@LAPTOP-Q23R32CR:~/progLab9$ git switch mybranch
@@ -124,5 +124,6 @@ vlad@LAPTOP-Q23R32CR:~/progLab9$ git log --oneline --graph
 * b51aa66 README and images dir
 * 0250d08 (origin/master) first commit
 ```
-14. Да, file2.txt не существует в ветке mybranch
+
+
 
