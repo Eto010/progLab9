@@ -1,5 +1,4 @@
 #include <stdio.h>
-//QuickSort
 int[] SortQuick(int[] arr)
 {
     if(arr.Length < 2) { return arr;}
