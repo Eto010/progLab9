@@ -200,4 +200,66 @@ index 4710947..0000000
 -    return left.Concat(center).Concat(right).ToArray();
 -}
 ```
+**Оценка 4:**
 
+1, 2, 3.
+```
+git diff
+diff --git a/sort.c b/sort.c
+index 4710947..552f9a4 100644
+--- a/sort.c
++++ b/sort.c
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++
+ int[] SortQuick(int[] arr)
+ {
+     if(arr.Length < 2) { return arr;}
+@@ -10,4 +11,10 @@ int[] SortQuick(int[] arr)
+     int[] center = arr.Where(x => x == support).ToArray();
+ 
+     return left.Concat(center).Concat(right).ToArray();
++}
++
++int main()
++{
++    int a[] = {4, 2, 0};
++    int aSort = SortQuick(a)
+ }
+ ```
+ 4. Да, git diff --staged пустой, так как в staged не были добавлены данные
+ 
+ 5, 6. git diff пустой, так как данные перенесены в staged
+6. 
+```
+git diff --staged
+diff --git a/sort.c b/sort.c
+index 4710947..552f9a4 100644
+--- a/sort.c
++++ b/sort.c
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++
+ int[] SortQuick(int[] arr)
+ {
+     if(arr.Length < 2) { return arr;}
+@@ -10,4 +11,10 @@ int[] SortQuick(int[] arr)
+     int[] center = arr.Where(x => x == support).ToArray();
+ 
+     return left.Concat(center).Concat(right).ToArray();
++}
++
++int main()
++{
++    int a[] = {4, 2, 0};
++    int aSort = SortQuick(a)
+ }
+\ No newline at end of file
+```
+int main()
+ {
+-    int a[] = {4, 2, 0};
++    int a[] = {4, 2};
+     int aSort = SortQuick(a)
+ }
+ ```
