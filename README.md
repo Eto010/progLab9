@@ -412,3 +412,16 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+**Ветки:**
+
+1. 
+```
+git add .
+vlad@LAPTOP-Q23R32CR:~/progLab9$ git commit -m "Add file greeting.txt"
+[mybranch 85075ae] Add file greeting.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 greeting.txt
+vlad@LAPTOP-Q23R32CR:~/progLab9$ 
+```
+2. 
+```
