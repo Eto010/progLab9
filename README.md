@@ -228,9 +228,10 @@ index 4710947..552f9a4 100644
  }
  ```
  4. Да, git diff --staged пустой, так как в staged не были добавлены данные
- 
+
  5, 6. git diff пустой, так как данные перенесены в staged
-6. 
+
+7. 
 ```
 git diff --staged
 diff --git a/sort.c b/sort.c
@@ -256,6 +257,8 @@ index 4710947..552f9a4 100644
  }
 \ No newline at end of file
 ```
+8, 9.
+```
 int main()
  {
 -    int a[] = {4, 2, 0};
@@ -263,3 +266,149 @@ int main()
      int aSort = SortQuick(a)
  }
  ```
+ 10. 
+ ```
+ git diff --staged
+diff --git a/sort.c b/sort.c
+index 4710947..552f9a4 100644
+--- a/sort.c
++++ b/sort.c
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++
+ int[] SortQuick(int[] arr)
+ {
+     if(arr.Length < 2) { return arr;}
+@@ -10,4 +11,10 @@ int[] SortQuick(int[] arr)
+     int[] center = arr.Where(x => x == support).ToArray();
+ 
+     return left.Concat(center).Concat(right).ToArray();
++}
++
++int main()
++{
++    int a[] = {4, 2, 0};
++    int aSort = SortQuick(a)
+ }
+ ```
+ 11. В данном случае в staged не добавлены изменения, то есть данные не подготовлены к коммиту, а сами изменения есть и git diff это отражает.
+ 12. 
+ ```
+ git status
+On branch mybranch
+Your branch is up to date with 'origin/mybranch'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   sort.c
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   sort.c
+```
+13, 14.
+```
+git status
+On branch mybranch
+Your branch is up to date with 'origin/mybranch'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   sort.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+15, 16.
+```
+git log --oneline --graph
+* 4965d20 (HEAD -> mybranch) restore staged
+* cbcc4f4 (origin/mybranch) ready to push
+* 4e6470b push
+* 6392217 mybranch ready to push
+* 3a43ac5 file1
+* 0655ca7 end 3
+* 4319db2 error commit
+* 2e606d8 sort
+* b51aa66 README and images dir
+* 0250d08 first commit
+```
+17, 18.
+```
+#include <stdio.h>
+
+int[] SortQuick(int[] arr)
+{
+    if(arr.Length < 2) { return arr;}
+
+    int support = arr[0];
+
+    int[] left = SortQuick(arr.Where(x => x < support).ToArray());
+    int[] right = SortQuick(arr.Where(x => x > support).ToArray());
+    int[] center = arr.Where(x => x == support).ToArray();
+
+    return left.Concat(center).Concat(right).ToArray();
+}
+
+int main()
+{
+    int a[] = {4, 2};
+    int aSort = SortQuick(a);
+    printf("hello git\n");
+}
+```
+19.
+```
+git status
+On branch mybranch
+Your branch is ahead of 'origin/mybranch' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   sort.c
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+20, 21.
+```
+#include <stdio.h>
+
+int[] SortQuick(int[] arr)
+{
+    if(arr.Length < 2) { return arr;}
+
+    int support = arr[0];
+
+    int[] left = SortQuick(arr.Where(x => x < support).ToArray());
+    int[] right = SortQuick(arr.Where(x => x > support).ToArray());
+    int[] center = arr.Where(x => x == support).ToArray();
+
+    return left.Concat(center).Concat(right).ToArray();
+}
+
+int main()
+{
+    int a[] = {4, 2};
+    int aSort = SortQuick(a)
+}
+```
+22.
+```
+ git status
+On branch mybranch
+Your branch is ahead of 'origin/mybranch' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
