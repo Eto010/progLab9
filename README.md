@@ -440,3 +440,32 @@ git status
 On branch feature/uppercase
 nothing to commit, working tree clean
 ```
+6, 7, 8.
+```
+  dev
+* feature/uppercase
+  master
+  mybranch
+  ```
+9. 
+```
+* 7e97039 (HEAD -> feature/uppercase) uppercase
+* a178391 (mybranch) Add content to greeting.txt
+* 85075ae Add file greeting.txt
+* 69461b5 (origin/mybranch) ready to push two
+* 4965d20 restore staged
+* cbcc4f4 ready to push
+* 4e6470b push
+* 6392217 mybranch ready to push
+* 3a43ac5 file1
+| * eca4d80 (origin/master, master) switch to mybranch
+| | * 52a82ec (origin/dev, dev) README changes
+| |/  
+|/|   
+* | 0655ca7 end 3
+* | 4319db2 error commit
+* | 2e606d8 sort
+* | b51aa66 README and images dir
+|/  
+* 0250d08 first commit
+```
