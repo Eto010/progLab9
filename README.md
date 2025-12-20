@@ -425,3 +425,18 @@ vlad@LAPTOP-Q23R32CR:~/progLab9$
 ```
 2. 
 ```
+git commit -m "Add content to greeting.txt"
+[mybranch a178391] Add content to greeting.txt
+ 2 files changed, 14 insertions(+)
+ ```
+ 3, 4.
+ ```
+ git checkout -b "feature/uppercase"
+Switched to a new branch 'feature/uppercase'
+```
+5.
+```
+git status
+On branch feature/uppercase
+nothing to commit, working tree clean
+```
