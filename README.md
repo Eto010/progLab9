@@ -505,3 +505,46 @@ index d9605cb..b6fc4c6 100644
 ```
 HELLO
 ```
+15. 
+```
+git branch -d feature/uppercase
+Deleted branch feature/uppercase (was f6dab8c).
+```
+16. 
+```
+git merge mybranch
+Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md
+Auto-merging file1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+17.
+```
+git log --oneline --graph --all
+*   2e41e3d (HEAD -> master, origin/master) merge
+|\  
+| *   aa63543 (mybranch) Merge branch 'feature/uppercase' into mybranch
+| |\  
+| | * f6dab8c switch to mybranch
+| | * 7e97039 uppercase
+| * | afba46d Ready to merge
+| * | 47ad5c2 differents mybranch and feature/uppercase
+| |/  
+| * a178391 Add content to greeting.txt
+| * 85075ae Add file greeting.txt
+| * 69461b5 (origin/mybranch) ready to push two
+| * 4965d20 restore staged
+| * cbcc4f4 ready to push
+| * 4e6470b push
+| * 6392217 mybranch ready to push
+| * 3a43ac5 file1
+* | eca4d80 switch to mybranch
+| | * 52a82ec (origin/dev, dev) README changes
+| |/  
+| * 0655ca7 end 3
+| * 4319db2 error commit
+| * 2e606d8 sort
+| * b51aa66 README and images dir
+|/  
+* 0250d08 first commit
+```
