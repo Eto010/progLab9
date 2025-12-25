@@ -473,3 +473,31 @@ nothing to commit, working tree clean
 ```
 hello
 ```
+12. 
+```
+git diff feature/uppercase
+diff --git a/README.md b/README.md
+index 8acc370..a7ab1b3 100644
+--- a/README.md
++++ b/README.md
+@@ -468,4 +468,8 @@ nothing to commit, working tree clean
+ * | b51aa66 README and images dir
+ |/  
+ * 0250d08 first commit
+-```
+\ No newline at end of file
++```
++10, 11.
++```
++hello
++```
+diff --git a/greeting.txt b/greeting.txt
+index d9605cb..b6fc4c6 100644
+--- a/greeting.txt
++++ b/greeting.txt
+@@ -1 +1 @@
+-HELLO
+\ No newline at end of file
++hello
+\ No newline at end of file
+```
